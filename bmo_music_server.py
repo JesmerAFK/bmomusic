@@ -252,7 +252,8 @@ def search_music():
     global play_queue, play_mode, current_playing, current_artist_focus
     
     query = request.args.get("q", "").lower().strip()
-    host_url = f"http://{LAN_IP}:5001"
+    # 🟢 Auto-detect the Cloud Host (Render) or Local Host
+    host_url = request.host_url.rstrip("/")
     
     if not query: 
         return jsonify({"error": "No query"}), 400
@@ -358,7 +359,8 @@ def get_music_library():
     files = [f for f in os.listdir(MUSIC_DIR) if f.lower().endswith(('.mp3', '.m4a', '.wav', '.webm', '.flac', '.ogg'))]
     db = load_metadata()
     library = []
-    host_url = f"http://{LAN_IP}:5001"
+    # 🟢 Auto-detect the Cloud Host (Render) or Local Host
+    host_url = request.host_url.rstrip("/")
     for f in files:
         vid_id = f.rsplit('.', 1)[0]
         meta = db.get(vid_id, {})
