@@ -1,0 +1,13 @@
+flask
+flask-cors
+yt-dlp
+fuzzywuzzy
+python-Levenshtein
+requests
+google-generativeai
+speechrecognition
+edge-tts
+asyncio
+pydub
+supabase
+numpy

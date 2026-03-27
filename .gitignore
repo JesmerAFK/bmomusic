@@ -1,0 +1,17 @@
+__pycache__/
+music/
+youtube_cache/
+temp_audio/
+ffmpeg/
+ffmpeg_path.txt
+*.mp3
+*.flac
+*.wav
+*.m4a
+*.zip
+Qwen3-ASR-0.6B/
+memory.db
+payload.txt
+.venv/
+.env
+.ipynb_checkpoints/
